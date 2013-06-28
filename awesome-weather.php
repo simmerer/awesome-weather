@@ -78,7 +78,7 @@ function awesome_weather_logic( $atts )
 	if(!$city_id)
 	{
 		$city_ping = "http://api.openweathermap.org/data/2.1/find/name?q=" . $city_name_slug;
-		$data = json_decode( file_get_contents( $city_ping ) );
+		$data = json_decode( wp_remote_get( $city_ping ) );
 	
 		if( isset($data->message) AND $data->message == "not found" )
 		{ 
@@ -105,16 +105,17 @@ function awesome_weather_logic( $atts )
 	{
 		$weather_data = get_transient( $weather_transient_name );
 	}
+
 	
 	if(!isset($weather_data['today']))
 	{
-		$weather_data['today'] 		= json_decode(file_get_contents("http://api.openweathermap.org/data/2.1/weather/city/" . $city_id . "?units=" . $units) );
+		$weather_data['today'] 		= json_decode(wp_remote_get("http://api.openweathermap.org/data/2.1/weather/city/" . $city_id . "?units=" . $units) );
 		set_transient( $weather_transient_name, $weather_data, apply_filters( 'awesome_weather_cache', 3600 ) ); // CACHE FOR AN HOUR
 	}
 	
 	if(!isset($weather_data['forecast']) AND $days_to_show != "hide")
 	{
-		$weather_data['forecast'] 	= json_decode(file_get_contents("http://api.openweathermap.org/data/2.1/forecast/city/" . $city_id . "?mode=daily_compact&units=" . $units) );
+		$weather_data['forecast'] 	= json_decode(wp_remote_get("http://api.openweathermap.org/data/2.1/forecast/city/" . $city_id . "?mode=daily_compact&units=" . $units) );
 		set_transient( $weather_transient_name, $weather_data, apply_filters( 'awesome_weather_cache', 3600 ) ); // CACHE FOR AN HOUR
 	}
 
@@ -203,19 +204,15 @@ function awesome_weather_logic( $atts )
 			</div> <!-- /.awesome-weather-current-temp -->
 	";	
 	
-	
-	$mph = ($units == "imperial") ? __('mph', 'awesome-weather') : __('km/h', 'awesome-weather');
-	
-	
 	if($show_stats)
 	{
 		$rtn .= "
 				
 				<div class=\"awesome-weather-todays-stats\">
 					<div class=\"awe_desc\">{$today->weather[0]->description}</div>
-					<div class=\"awe_humidty\">" . __('humidity', 'awesome-weather') . ": {$today->main->humidity}% </div>
-					<div class=\"awe_wind\">" . __('wind', 'awesome-weather') . ": {$today->wind->speed} {$mph} {$wind_direction}</div>
-					<div class=\"awe_highlow\"> ". __('H', 'awesome-weather') . " {$today_high} &bull; " . __('L', 'awesome-weather') . " {$today_low} </div>	
+					<div class=\"awe_humidty\">humidity: {$today->main->humidity}% </div>
+					<div class=\"awe_wind\">wind: {$today->wind->speed}mph {$wind_direction}</div>
+					<div class=\"awe_highlow\"> H {$today_high} &bull; L {$today_low} </div>	
 				</div> <!-- /.awesome-weather-todays-stats -->
 		";
 	}
@@ -248,7 +245,7 @@ function awesome_weather_logic( $atts )
 	
 	if($show_link AND $city_id)
 	{
-		$show_link_text = apply_filters('awesome_weather_extended_forecast_text' , __("extended forecast", 'awesome-weather') );
+		$show_link_text = apply_filters('awesome_weather_extended_forecast_text' , "extended forecast" );
 
 		$rtn .= "<div class=\"awesome-weather-more-weather-link\">";
 		$rtn .= "<a href=\"http://openweathermap.org/city/{$city_id}\" target=\"_blank\">{$show_link_text}</a>";		
