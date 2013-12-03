@@ -49,7 +49,7 @@ All weather data is provided by http://openweathermap.org and is cached for one 
 == Upgrade Notice ==
 
 = 1.2.5 =
-Add descriptions to widget class for live conditions-specific styling [simmerdesign]
+Add descriptions to widget class for conditions-specific styling [simmerdesign]
 
 = 1.2.4 =
 Forecast now stops showing today.
