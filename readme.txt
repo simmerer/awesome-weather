@@ -55,7 +55,7 @@ All weather data is provided by http://openweathermap.org and is cached for one 
 
 == Upgrade Notice ==
 
-= 1.3.2-sd =
+= 1.3.3s =
 Fed "desc" field (current conditions) into widget class for conditions-specific styling
 
 

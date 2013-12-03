@@ -5,7 +5,7 @@ Plugin URI: http://halgatewood.com/awesome-weather
 Description: A weather widget that actually looks cool
 Author: Hal Gatewood, contributions by David Simmer
 Author URI: http://www.halgatewood.com
-Version: 1.3.2-sd
+Version: 1.3.3s
 
 
 FILTERS AVAILABLE:
@@ -254,7 +254,7 @@ function awesome_weather_logic( $atts )
 		$inline_style = " style=\"{$inline_style}\"";
 	}
 	
-	$desc_class = end(explode(',',$today->weather[0]->description));
+	$desc_class = 'desc-' . end(explode(' ',$today->weather[0]->description));
 	
 	// DISPLAY WIDGET	
 	$rtn .= "
