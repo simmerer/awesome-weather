@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: halgatewood
+Contributors: halgatewood, simmerdesign
 Donate link: http://halgatewood.com/awesome-weather/
 Tags: widgets, sidebar, shortcode, openweathermap, weather, weather widget, forecast, global
 Requires at least: 3.5
@@ -47,6 +47,9 @@ All weather data is provided by http://openweathermap.org and is cached for one 
 5. Background Image Option (1.2)
 
 == Upgrade Notice ==
+
+= 1.2.5 =
+Add descriptions to widget class for live conditions-specific styling [simmerdesign]
 
 = 1.2.4 =
 Forecast now stops showing today.
