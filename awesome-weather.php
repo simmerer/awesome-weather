@@ -3,9 +3,9 @@
 Plugin Name: Awesome Weather Widget
 Plugin URI: http://halgatewood.com/awesome-weather
 Description: A weather widget that actually looks cool
-Author: Hal Gatewood
+Author: Hal Gatewood, contributions from David Simmer
 Author URI: http://www.halgatewood.com
-Version: 1.2.4
+Version: 1.2.5
 
 
 FILTERS AVAILABLE:
