@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: halgatewood
+Contributors: halgatewood, simmerdesign
 Donate link: http://halgatewood.com/awesome-weather/
 Tags: widgets, sidebar, shortcode, openweathermap, weather, weather widget, forecast, global, temp
 Requires at least: 3.5
@@ -54,6 +54,10 @@ All weather data is provided by http://openweathermap.org and is cached for one 
 5. Add inline styles to your widget and set custom background colors (1.3.1)
 
 == Upgrade Notice ==
+
+= 1.3.2-sd =
+Fed "desc" field (current conditions) into widget class for conditions-specific styling
+
 
 = 1.3.2 =
 Improved support for poorly coded themes that load the before_title and after_title with extra divs and don't take into account that widgets may not use a title. 
