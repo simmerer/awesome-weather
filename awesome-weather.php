@@ -254,10 +254,12 @@ function awesome_weather_logic( $atts )
 		$inline_style = " style=\"{$inline_style}\"";
 	}
 	
+	$desc_class = end(explode(',',$today->weather[0]->description));
+	
 	// DISPLAY WIDGET	
 	$rtn .= "
 	
-		<div id=\"awesome-weather-{$city_name_slug}\" class=\"awesome-weather-wrap awecf {$bg_color} {$show_stats_class} awe_{$size}\"{$inline_style}>
+		<div id=\"awesome-weather-{$city_name_slug}\" class=\"awesome-weather-wrap awecf {$bg_color} {$show_stats_class} {$desc_class} awe_{$size}\"{$inline_style}>
 	";
 
 
