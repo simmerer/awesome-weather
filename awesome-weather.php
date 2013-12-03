@@ -185,11 +185,13 @@ function awesome_weather_logic( $atts )
 	$show_stats_class = ($show_stats) ? "awe_with_stats" : "awe_without_stats";
 	
 	if($background) $bg_color = "darken";
+
+	$desc_class = end(explode(',',$today->weather[0]->description));
 	
 	// DISPLAY WIDGET	
 	$rtn .= "
 	
-		<div id=\"awesome-weather-{$city_name_slug}\" class=\"awesome-weather-wrap awecf {$bg_color} {$show_stats_class} awe_{$size}\">
+		<div id=\"awesome-weather-{$city_name_slug}\" class=\"awesome-weather-wrap awecf {$bg_color} {$show_stats_class} {$desc_class} awe_{$size}\">
 	";
 
 
