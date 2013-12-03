@@ -254,7 +254,7 @@ function awesome_weather_logic( $atts )
 		$inline_style = " style=\"{$inline_style}\"";
 	}
 	
-	$desc_class = 'desc-' . end(explode(' ',$today->weather[0]->description));
+	$desc_class = 'desc-' . str_replace(' ','-',$today->weather[0]->description);
 	
 	// DISPLAY WIDGET	
 	$rtn .= "
