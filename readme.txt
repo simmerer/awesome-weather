@@ -56,6 +56,9 @@ All weather data is provided by http://openweathermap.org and is cached for one 
 
 == Upgrade Notice ==
 
+= 111.3.4 =
+Avoid automatic upgrades by increasing version number
+
 = 1.3.4 =
 Fixed issue with Location stripping spaces from text cause weather to not get accessed. Thanks @storkontheroof!
 
