@@ -3,9 +3,9 @@
 Plugin Name: Awesome Weather Widget
 Plugin URI: http://halgatewood.com/awesome-weather
 Description: A weather widget that actually looks cool
-Author: Hal Gatewood, contributions by David Simmer
+Author: Hal Gatewood
 Author URI: http://www.halgatewood.com
-Version: 1.3.3.1s
+Version: 1.3.4
 
 
 FILTERS AVAILABLE:
@@ -44,6 +44,7 @@ add_action('plugins_loaded', 'awesome_weather_setup', 99999);
 function awesome_weather_wp_head( $posts ) 
 {
 	wp_enqueue_style( 'awesome-weather', plugins_url( '/awesome-weather.css', __FILE__ ) );
+	wp_enqueue_style( 'opensans-googlefont', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300' );
 }
 add_action('wp_enqueue_scripts', 'awesome_weather_wp_head');
 
@@ -126,7 +127,7 @@ function awesome_weather_logic( $atts )
 		$weather_data['forecast'] = array();
 		
 		// NOW
-		$now_ping = "http://api.openweathermap.org/data/2.5/weather?q=" . $city_name_slug . "&lang=" . $locale . "&units=" . $units;
+		$now_ping = "http://api.openweathermap.org/data/2.5/weather?q=" . $location . "&lang=" . $locale . "&units=" . $units;
 		$now_ping_get = wp_remote_get( $now_ping );
 	
 		if( is_wp_error( $now_ping_get ) ) 
@@ -149,7 +150,7 @@ function awesome_weather_logic( $atts )
 		// FORECAST
 		if( $days_to_show != "hide" )
 		{
-			$forecast_ping = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" . $city_name_slug . "&lang=" . $locale . "&units=" . $units ."&cnt=7";
+			$forecast_ping = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" . $location . "&lang=" . $locale . "&units=" . $units ."&cnt=7";
 			$forecast_ping_get = wp_remote_get( $forecast_ping );
 		
 			if( is_wp_error( $forecast_ping_get ) ) 
@@ -254,8 +255,9 @@ function awesome_weather_logic( $atts )
 		$inline_style = " style=\"{$inline_style}\"";
 	}
 	
-	$desc_class = 'desc-' . strtolower(str_replace(' ','-',$today->weather[0]->description));
-	
+
+  $desc_class = 'desc-' . strtolower(str_replace(' ','-',$today->weather[0]->description));
+  
 	// DISPLAY WIDGET	
 	$rtn .= "
 	
@@ -271,6 +273,10 @@ function awesome_weather_logic( $atts )
 
 	$rtn .= "
 			<div class=\"awesome-weather-header\">{$header_title}</div>
+			
+			<div class=\"awesome-weather-current-temp\">
+				$today_temp<sup>{$units_display}</sup>
+			</div> <!-- /.awesome-weather-current-temp -->
 	";	
 	
 	if($show_stats)
@@ -281,9 +287,7 @@ function awesome_weather_logic( $atts )
 		$rtn .= "
 				
 				<div class=\"awesome-weather-todays-stats\">
-					<div class=\"awe_desc\">{$today->weather[0]->description}
-					<span class=\"temp\">$today_temp<sup>{$units_display}</sup></span>
-					</div>				
+					<div class=\"awe_desc\">{$today->weather[0]->description}</div>
 					<div class=\"awe_humidty\">" . __('humidity:', 'awesome-weather') . " {$today->main->humidity}% </div>
 					<div class=\"awe_wind\">" . __('wind:', 'awesome-weather') . " {$today->wind->speed}" . $speed_text . " {$wind_direction}</div>
 					<div class=\"awe_highlow\"> "  .__('H', 'awesome-weather') . " {$today_high} &bull; " . __('L', 'awesome-weather') . " {$today_low} </div>	

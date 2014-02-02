@@ -8,201 +8,206 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-01-16 20:19+0100\n"
+"Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.6.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"Language: pl_PL\n"
 
 #: awesome-weather.php:69
 msgid "C"
-msgstr ""
+msgstr "°C"
 
 #: awesome-weather.php:69
 msgid "F"
-msgstr ""
+msgstr "°F"
 
 #: awesome-weather.php:228
 msgid "N"
-msgstr ""
+msgstr "płn."
 
 #: awesome-weather.php:229
 msgid "NNE"
-msgstr ""
+msgstr "płn. - płn. wsch."
 
 #: awesome-weather.php:230
 msgid "NE"
-msgstr ""
+msgstr "płn. wsch."
 
 #: awesome-weather.php:231
 msgid "ENE"
-msgstr ""
+msgstr "wsch. - płn. wsch."
 
 #: awesome-weather.php:232
 msgid "E"
-msgstr ""
+msgstr "wsch."
 
 #: awesome-weather.php:233
 msgid "ESE"
-msgstr ""
+msgstr "wsch. - płd. wsch."
 
 #: awesome-weather.php:234
 msgid "SE"
-msgstr ""
+msgstr "płd. wsch."
 
 #: awesome-weather.php:235
 msgid "SSE"
-msgstr ""
+msgstr "płd. - płd. wsch."
 
 #: awesome-weather.php:236
 msgid "S"
-msgstr ""
+msgstr "płd."
 
 #: awesome-weather.php:237
 msgid "SSW"
-msgstr ""
+msgstr "płd. - płd. zach."
 
 #: awesome-weather.php:238
 msgid "SW"
-msgstr ""
+msgstr "płd. zach."
 
 #: awesome-weather.php:239
 msgid "WSW"
-msgstr ""
+msgstr "zach. - płd. zach."
 
 #: awesome-weather.php:240
 msgid "W"
-msgstr ""
+msgstr "zach."
 
 #: awesome-weather.php:241
 msgid "WNW"
-msgstr ""
+msgstr "zach. - płn. zach."
 
 #: awesome-weather.php:242
 msgid "NW"
-msgstr ""
+msgstr "płn. zach."
 
 #: awesome-weather.php:243
 msgid "NNW"
-msgstr ""
+msgstr "płn. - płn. zach."
 
 #: awesome-weather.php:280
 msgid "km/h"
-msgstr ""
+msgstr "km/h"
 
 #: awesome-weather.php:280
 msgid "mph"
-msgstr ""
+msgstr "mph"
 
 #: awesome-weather.php:287
 msgid "humidity:"
-msgstr ""
+msgstr "wilgotność:"
 
 #: awesome-weather.php:288
 msgid "wind:"
-msgstr ""
+msgstr "wiatr:"
 
 #: awesome-weather.php:289
 msgid "H"
-msgstr ""
+msgstr "Max:"
 
 #: awesome-weather.php:289
 msgid "L"
-msgstr ""
+msgstr "Min:"
 
 #: awesome-weather.php:305
 msgid "Sun"
-msgstr ""
+msgstr "Nd"
 
 #: awesome-weather.php:305
 msgid "Mon"
-msgstr ""
+msgstr "Pon"
 
 #: awesome-weather.php:305
 msgid "Tue"
-msgstr ""
+msgstr "Wt"
 
 #: awesome-weather.php:305
 msgid "Wed"
-msgstr ""
+msgstr "Śr"
 
 #: awesome-weather.php:305
 msgid "Thu"
-msgstr ""
+msgstr "Czw"
 
 #: awesome-weather.php:305
 msgid "Fri"
-msgstr ""
+msgstr "Pt"
 
 #: awesome-weather.php:305
 msgid "Sat"
-msgstr ""
+msgstr "Sob"
 
 #: awesome-weather.php:323
 msgid "extended forecast"
-msgstr ""
+msgstr "rozszerzona prognoza"
 
 #: awesome-weather.php:344
 msgid "No weather information available"
-msgstr ""
+msgstr "Brak danych pogodowych"
 
 #: awesome-weather.php:405
 msgid "Location:"
-msgstr ""
+msgstr "Lokalizacja"
 
 #: awesome-weather.php:406
 msgid "(i.e: London,UK or New York City,NY)"
-msgstr ""
+msgstr "(np.: Londyn,UK lub Nowy Jork, NY)"
 
 #: awesome-weather.php:412
 msgid "Override Title:"
-msgstr ""
+msgstr "niestandardowy tytuł"
 
 #: awesome-weather.php:417
 msgid "Units:"
-msgstr ""
+msgstr "Jednostki"
 
 #: awesome-weather.php:423
 msgid "Size:"
-msgstr ""
+msgstr "rozmiar"
 
 #: awesome-weather.php:432
 msgid "Forecast:"
-msgstr ""
+msgstr "Prognoza"
 
 #: awesome-weather.php:444
 msgid "Background Image:"
-msgstr ""
+msgstr "Obrazek tła"
 
 #: awesome-weather.php:449
 msgid "Custom Background Color:"
-msgstr ""
+msgstr "Niestandardowy kolor tła"
 
 #: awesome-weather.php:450
 msgid "(overrides color changing, use hex #7fb761)"
-msgstr ""
+msgstr "Nadpisywanie domyślnego koloru, użyj hex #7fb761"
 
 #: awesome-weather.php:455
 msgid "Hide Stats:"
-msgstr ""
+msgstr "Ukryj statystyki"
 
 #: awesome-weather.php:460
 msgid "Link to OpenWeatherMap:"
-msgstr ""
+msgstr "Link do OpenWeatherMap"
+
 #. Plugin Name of the plugin/theme
 msgid "Awesome Weather Widget"
-msgstr ""
+msgstr "Awesome Weather Widget"
 
 #. Plugin URI of the plugin/theme
 msgid "http://halgatewood.com/awesome-weather"
-msgstr ""
+msgstr "http://halgatewood.com/awesome-weather"
 
 #. Description of the plugin/theme
 msgid "A weather widget that actually looks cool"
-msgstr ""
+msgstr "A weather widget that actually looks cool"
 
 #. Author of the plugin/theme
 msgid "Hal Gatewood"
-msgstr ""
+msgstr "Hal Gatewood"
 
 #. Author URI of the plugin/theme
 msgid "http://www.halgatewood.com"
-msgstr ""
+msgstr "http://www.halgatewood.com"

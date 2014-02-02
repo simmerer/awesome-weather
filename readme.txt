@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors: halgatewood, simmerdesign
+Contributors: halgatewood
 Donate link: http://halgatewood.com/awesome-weather/
 Tags: widgets, sidebar, shortcode, openweathermap, weather, weather widget, forecast, global, temp
 Requires at least: 3.5
-Tested up to: 3.6
+Tested up to: 3.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,6 +35,7 @@ All weather data is provided by http://openweathermap.org and is cached for one 
 = Translations =
 * Portuguese - alvarogois
 * German - Anne Bremer
+* Polish - Femcio
 
 
 == Installation ==
@@ -48,16 +49,18 @@ All weather data is provided by http://openweathermap.org and is cached for one 
 
 1. Basic wide layout
 2. Basic tall layout
-3. Micro no features
+3. Micro, using the checkbox 'Hide Stats'
 4. Widget Settings
 5. Background Image Option (1.2)
 5. Add inline styles to your widget and set custom background colors (1.3.1)
 
 == Upgrade Notice ==
 
-= 1.3.3s =
-Fed "desc" field (current conditions) into widget class for conditions-specific styling
+= 1.3.4 =
+Fixed issue with Location stripping spaces from text cause weather to not get accessed. Thanks @storkontheroof!
 
+= 1.3.3 =
+Moved Google Font out of CSS into enqueue
 
 = 1.3.2 =
 Improved support for poorly coded themes that load the before_title and after_title with extra divs and don't take into account that widgets may not use a title. 
@@ -99,6 +102,12 @@ Removed debugging code, sorry!
 Changed API endpoints. Might not find weather without update.
 
 == Changelog ==
+
+= 1.3.4 =
+Fixed issue with Location stripping spaces from text cause weather to not get accessed. Thanks @storkontheroof!
+
+= 1.3.3 =
+Moved Google Font out of CSS into enqueue
 
 = 1.3.2 =
 * Improved support for poorly coded themes that load the before_title and after_title with extra divs and don't take into account that widgets may not use a title. 
