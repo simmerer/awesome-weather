@@ -273,10 +273,6 @@ function awesome_weather_logic( $atts )
 
 	$rtn .= "
 			<div class=\"awesome-weather-header\">{$header_title}</div>
-			
-			<div class=\"awesome-weather-current-temp\">
-				$today_temp<sup>{$units_display}</sup>
-			</div> <!-- /.awesome-weather-current-temp -->
 	";	
 	
 	if($show_stats)
@@ -287,7 +283,9 @@ function awesome_weather_logic( $atts )
 		$rtn .= "
 				
 				<div class=\"awesome-weather-todays-stats\">
-					<div class=\"awe_desc\">{$today->weather[0]->description}</div>
+					<div class=\"awe_desc\">{$today->weather[0]->description}
+            <span class=\"temp\">$today_temp<sup>{$units_display}</sup></span>
+          </div>
 					<div class=\"awe_humidty\">" . __('humidity:', 'awesome-weather') . " {$today->main->humidity}% </div>
 					<div class=\"awe_wind\">" . __('wind:', 'awesome-weather') . " {$today->wind->speed}" . $speed_text . " {$wind_direction}</div>
 					<div class=\"awe_highlow\"> "  .__('H', 'awesome-weather') . " {$today_high} &bull; " . __('L', 'awesome-weather') . " {$today_low} </div>	
